@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Navbar.css'
 
 function Navbar() {
@@ -8,19 +9,19 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         
-        <div className="navbar-logo">NOOK</div>
+        <Link to="/" className="navbar-logo">NOOK</Link>
 
         <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-          <li><a href="/explore">Explore</a></li>
-          <li><a href="/write">Write</a></li>
-          <li><a href="/features">Features</a></li>
-          <li><a href="/how-it-works">How it works</a></li>
-          <li><a href="/earnings">Earnings</a></li>
+          <li><Link to="/explore">Explore</Link></li>
+          <li><Link to="/write">Write</Link></li>
+          <li><Link to="/features">Features</Link></li>
+          <li><Link to="/how-it-works">How it works</Link></li>
+          <li><Link to="/earnings">Earnings</Link></li>
         </ul>
 
         <div className="navbar-auth">
-          <a href="/login" className="login-btn">Log in</a>
-          <a href="/get-started" className="started-btn">Get Started</a>
+          <Link to="/login" className="login-btn">Log in</Link>
+          <Link to="/get-started" className="started-btn">Get Started</Link>
         </div>
 
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
